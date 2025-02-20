@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munana Merveille - Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #333, #555);
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.2em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .hidden {
+            opacity: 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        button {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons a {
+            text-decoration: none;
+            color: white;
+        }
+        img.profile {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff758c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFXl6Hpb4wVzA/profile-displayphoto-shrink_200_200/B4DZS841.2HIAY-/0/1738335808704?e=2147483647&v=beta&t=n_GaNxdqMq4fiEjXeKQLQ_Cub24i2tLYqgOElwbynJo" alt="Munana Merveille" class="profile">
+        <h1>Munana Merveille</h1>
+        <p>ALU student pursuing Software Engineering.</p>
+        <div class="buttons">
+            <button><a href="cv.pdf" download>Download CV</a></button>
+            <button><a href="#contact">Hire Me</a></button>
+        </div>
+    </section>
+    
+    <section id="skills" class="hidden">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>Communication</li>
+            <li>Teamwork</li>
+        </ul>
+    </section>
+    
+    <section id="experience" class="hidden">
+        <h2>Work Experience</h2>
+        <p>Worked as a teacher after completing high school.</p>
+    </section>
+    
+    <section id="projects" class="hidden">
+        <h2>Projects</h2>
+        <p>Descriptions of your projects.</p>
+    </section>
+    
+    <section id="contact" class="hidden">
+        <h2>Contact</h2>
+        <p>Phone: +250791839793</p>
+        <p>Email: <a href="mailto:m.munana@alustudent.com">m.munana@alustudent.com</a></p>
+        <p>GitHub: <a href="https://github.com/Munana122" target="_blank">Munana122</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/munana-merveille" target="_blank">Munana Merveille</a></p>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <script>
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.remove("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
